@@ -48,6 +48,8 @@
         <br>
         <a href="crear.jsp">CREAR Alumnos</a>
         <br>
+        <a href="reporte.jsp">Reportes</a>
+        <br>
         <a href="../menu.jsp">REGRESAR AL MENU PRINCIPAL</a>
         <br>
         <form method="post" action="index.jsp">
@@ -84,7 +86,7 @@
                     out.println("<td>" + con.getResultado().getString("apepat") + "</td>");
                     out.println("<td>" + con.getResultado().getString("apemat") + "</td>");
                     out.println("<td>" + con.getResultado().getString("fecha_nacimiento") + "</td>");
-                     out.println("<td>" + con.getResultado().getString("sala_id") + "</td>");
+                     out.println("<td>" + con.getResultado().getString("sala") + "</td>");
                  out.println("<td>" + "<a href='../ServletAlumno?eliminar=" + con.getResultado().getString("alumno_id") + "'>Eliminar</a>" + "</td>");
                     out.println("<td>" + "<a href='editar.jsp?alumno_id=" + con.getResultado().getString("alumno_id") + "'>Editar</a>" + "</td>");
                 %>

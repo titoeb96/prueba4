@@ -48,6 +48,8 @@
         <br>
         <a href="crear.jsp">CREAR CIUDAD</a>
         <br>
+        <a href="report.jsp">Reportes</a>
+        <br>
         <a href="../menu.jsp">REGRESAR AL MENU PRINCIPAL</a>
         <br>
         <form method="post" action="index.jsp">

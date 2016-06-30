@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="establecimientos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a61e7ead-3769-4ac4-bf36-2798cf43736e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select Establecimientos.establecimiento_id,Establecimientos.nombre,Establecimientos.fecha_creacion,Establecimientos.creado_por,Ciudades.nombre as ciudad from Establecimientos,Ciudades where Establecimientos.estado='activo' and Ciudades.ciudad_id=Establecimientos.ciudad_id]]>
+	</queryString>
+	<field name="establecimiento_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_creacion" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="creado_por" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ciudad" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="28" y="0" width="516" height="79" uuid="02e98173-287c-44d1-9de9-4eebf9e7bf0b"/>
+				<textElement>
+					<font size="48"/>
+				</textElement>
+				<text><![CDATA[ESTABLECIMIENTOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="34" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="128" height="20" uuid="e9e5451c-0348-4c5d-a168-c836dc9af14a"/>
+				<text><![CDATA[ESTABLECIMIENTO_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="0" width="100" height="20" uuid="abbe8ce3-f6c2-44bd-93a2-307d8421f48e"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="0" width="100" height="20" uuid="bc22e8dc-0c63-408a-b379-78aa922e4a09"/>
+				<text><![CDATA[FECHA_CREACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="0" width="100" height="20" uuid="96795e44-030d-48e6-abe0-9fad4f30c50b"/>
+				<text><![CDATA[CREADO_POR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="0" width="76" height="20" uuid="59dc9460-6951-4110-9c2c-94e68481736c"/>
+				<text><![CDATA[CIUDAD]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="28" y="0" width="100" height="20" uuid="879c928e-7a4d-4169-81ff-ff7dd02d4e47"/>
+				<textFieldExpression><![CDATA[$F{establecimiento_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="0" width="100" height="20" uuid="cb49aca0-697c-4b74-ace1-b9cd964db010"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="2" width="100" height="20" uuid="87379c2d-1f3f-43cf-b6ac-c267c54ed312"/>
+				<textFieldExpression><![CDATA[$F{fecha_creacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="2" width="100" height="20" uuid="b2eceab4-e888-41aa-939f-3877a6961618"/>
+				<textFieldExpression><![CDATA[$F{creado_por}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="0" width="76" height="20" uuid="39b9f12c-6b52-4c9c-afa0-272537d8bab7"/>
+				<textFieldExpression><![CDATA[$F{ciudad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

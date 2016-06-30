@@ -49,6 +49,8 @@
         <br>
         <a href="crear.jsp">CREAR Usuarios</a>
         <br>
+        <a href="newjsp.jsp">Reportes</a>
+        <br>
         <a href="../menu.jsp">REGRESAR AL MENU PRINCIPAL</a>
         <br>
         <form method="post" action="index.jsp">

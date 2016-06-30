@@ -47,6 +47,8 @@
         <br>
         <a href="crear.jsp">CREAR SALA</a>
         <br>
+        <a href="newjsp.jsp">Reportes</a>
+        <br>
         <a href="../menu.jsp">REGRESAR AL MENU PRINCIPAL</a>
         <br>
         <form method="post" action="index.jsp">

@@ -48,7 +48,8 @@
   </div>
         <br>
         <a href="crear.jsp">CREAR Paises</a>
-      
+      <br>
+        <a href="newjsp.jsp">Reportes</a>
         <br>
         <a href="../menu.jsp">REGRESAR AL MENU PRINCIPAL</a>
         <br>
