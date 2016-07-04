@@ -33,14 +33,14 @@ public class ServletLogin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-          String username = request.getParameter("user");
+        String username = request.getParameter("user");
             String pass = request.getParameter("pass");
 
             Usuario user = new Usuario();
             
             if(request.getParameter("login") != null){
                 if (username.equals("admin") && pass.equals("admin")){
-                    response.sendRedirect("Prueba3/principal.jsp");
+                    response.sendRedirect("Prueba3/menu.jsp");
                 }else{
                     response.sendRedirect("/Prueba3/index.jsp");
                 }
@@ -48,8 +48,6 @@ public class ServletLogin extends HttpServlet {
             }
         }
     }
-        
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

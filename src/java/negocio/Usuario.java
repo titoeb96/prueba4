@@ -6,6 +6,7 @@
 package negocio;
 
 import accesodato.Coneccion;
+import java.util.Vector;
 
 /**
  *
@@ -68,6 +69,7 @@ public void save(){
  }
     public void delete (){
         con.setInsertar("update usuarios set estado='pasivo' where usuario_id='"+this.getUsuario_id()+"'");
-    }
+ 
     
+}
 }
