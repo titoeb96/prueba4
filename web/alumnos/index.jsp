@@ -13,6 +13,14 @@
         <link href="../template/css/bootstrap.min.css" rel="stylesheet">
     </head>
       <body>
+          <% HttpSession logeado = request.getSession(true);
+   String result = (String) logeado.getAttribute("valido");
+   if (result.equals("true") & result!=null ) {
+
+   } else {
+       response.sendRedirect("index.jsp");
+   }
+       %>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -48,7 +56,7 @@
         <br>
         <a href="crear.jsp">CREAR Alumnos</a>
         <br>
-        <a href="reporte.jsp">Reportes</a>
+         <a href="reporte.jsp">Reportes</a>
         <br>
         <a href="../menu.jsp">REGRESAR AL MENU PRINCIPAL</a>
         <br>
