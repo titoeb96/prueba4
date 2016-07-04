@@ -8,6 +8,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+           <% HttpSession logeado = request.getSession(true);
+   String result = (String) logeado.getAttribute("valido");
+   if (result.equals("true") & result!=null ) {
+        
+   } else {
+       response.sendRedirect("../index.jsp");
+   }
+       %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>

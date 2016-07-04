@@ -4,13 +4,18 @@
  * and open the template in the editor.
  */
 
+import accesodato.Coneccion;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import negocio.Usuario;
 
 /**
@@ -33,22 +38,28 @@ public class ServletLogin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-        String username = request.getParameter("user");
-            String pass = request.getParameter("pass");
-
-            Usuario user = new Usuario();
-            
-            if(request.getParameter("login") != null){
-                if (username.equals("admin") && pass.equals("admin")){
-                    response.sendRedirect("Prueba3/menu.jsp");
-                }else{
-                    response.sendRedirect("/Prueba3/index.jsp");
-                }
+             HttpSession logeado = request.getSession(true);
+            String usuario = request.getParameter("usuario");
+            String clave = request.getParameter("clave");
+          Coneccion con=new Coneccion();
+           con.setConsulta("select * from usuarios where usuario='"+usuario+"'");
+            try {
+               while(con.getResultado().next()){
+                   if(con.getResultado().getString("clave").equals(clave)){
+                       logeado.setAttribute("valido","true");
+                        response.sendRedirect("menu.jsp");
+                   }else{
+                       logeado.setAttribute("valido","false");
+                       response.sendRedirect("index.jsp");
+                   }
+               }
+           } catch (SQLException ex) {
+               Logger.getLogger(ServletLogin.class.getName()).log(Level.SEVERE, null, ex);
+           }
             
             }
-        }
+      
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
